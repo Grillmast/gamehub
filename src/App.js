@@ -1,5 +1,5 @@
 import "./App.css";
-import ButtonAppBar from "./components/appbar";
+import ButtonAppBar from "./components/appBar";
 import Home from "./components/home";
 
 
