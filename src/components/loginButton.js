@@ -11,7 +11,7 @@ const LoginButton = () => {
 
   return (
     <>
-      <Button variant="inherit" onClick={handleClick}>
+      <Button color="inherit" onClick={handleClick}>
         Login
       </Button>
       {showLogin && <Login />}
