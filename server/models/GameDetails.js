@@ -28,8 +28,8 @@ const gameDetailsSchema = new Schema({
   },
   metacritic_platforms: [
     {
-      // Define the schema for GamePlatformMetacritic if it has specific fields
-      // Example: type: Schema.Types.ObjectId, ref: 'GamePlatformMetacritic'
+      type: String,
+      default: null,
     }
   ],
   released: {
@@ -65,20 +65,20 @@ const gameDetailsSchema = new Schema({
     default: null,
   },
   ratings: {
-    // Define the schema for Ratings if it has specific fields
-    // Example: type: Schema.Types.ObjectId, ref: 'Ratings'
+    type: Array,
+    default: null,
   },
   reactions: {
-    // Define the schema for Reactions if it has specific fields
-    // Example: type: Schema.Types.ObjectId, ref: 'Reactions'
+    type: Number,
+    default: null,
   },
   added: {
     type: Number,
     default: null,
   },
   added_by_status: {
-    // Define the schema for AddedByStatus if it has specific fields
-    // Example: type: Schema.Types.ObjectId, ref: 'AddedByStatus'
+    type: String,
+    default: null,
   },
   playtime: {
     type: Number,
@@ -167,13 +167,13 @@ const gameDetailsSchema = new Schema({
     default: null,
   },
   esrb_rating: {
-    // Define the schema for EsrbRating if it has specific fields
-    // Example: type: Schema.Types.ObjectId, ref: 'EsrbRating'
+    type: String,
+    default: null,
   },
   platforms: [
     {
-      // Define the schema for Platform if it has specific fields
-      // Example: type: Schema.Types.ObjectId, ref: 'Platform'
+      type: Schema.Types.ObjectId,
+      ref: 'Platform',
     }
   ],
 });

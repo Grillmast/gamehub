@@ -14,10 +14,6 @@ const userSchema = new Schema({
         unique: true,
         match: [/.+@.+\..+/, 'Must use a valid email address']
     },
-    gameCount: {
-        type: Number,
-        default: 0
-    },
     savedGames: [
         {
             type: Schema.Types.ObjectId,

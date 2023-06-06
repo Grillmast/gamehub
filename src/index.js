@@ -9,14 +9,14 @@ const root = createRoot(document.getElementById('root'));
 
 root.render(
 	<Auth0Provider
-		domain='dev-8vljkph5zsws7ttu.us.auth0.com'
-		clientId='XQYYS8TIw6DRoqJPR6IiOWEiUPR1B75t'
+	domain='dev-8vljkph5zsws7ttu.us.auth0.com'
+	clientId='XQYYS8TIw6DRoqJPR6IiOWEiUPR1B75t'
     useRefreshTokens={true}
     useRefreshTokensFallback={false}
-		authorizationParams={{
-			redirect_uri: window.location.origin,
-		}}
+	authorizationParams={{
+	redirect_uri: window.location.origin,
+	}}
 	>
-		<App />
+	<App />
 	</Auth0Provider>
 );
