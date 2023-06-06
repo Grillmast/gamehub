@@ -19,9 +19,11 @@ const typeDefs = gql`
     updated: String
     rating: Float
     metacritic: Int
-
     screenshots: [Screenshot]
     trailers: [Trailer]
+    genres: [Genre]
+    platforms: [Platform]
+    tags: [Tag]
   }
 
   type GameDetails {
@@ -124,6 +126,38 @@ const typeDefs = gql`
     description: String
   }
 
+  type GamePlatformMetacritic {
+    score: Int
+  }
+  
+  type Ratings {
+    id: Int
+    title: String
+    count: Int
+    percent: Float
+  }
+  
+  type Reactions {
+    id: Int
+    title: String
+    count: Int
+  }
+  
+  type AddedByStatus {
+    yet: Int
+    owned: Int
+    beaten: Int
+    toplay: Int
+    dropped: Int
+    playing: Int
+  }
+  
+  type EsrbRating {
+    id: Int
+    name: String
+    slug: String
+  }
+
   type Query {
     games(
       page: Int
@@ -154,7 +188,7 @@ const typeDefs = gql`
     gameScreenshots(gameId: ID!): [Screenshot]
     gameTrailers(gameId: ID!): [Trailer]
     gameDetails(gameId: ID!): GameDetails
-    games(ordering: String, page: Int, pageSize: Int): GameList
+    gamesByParams(ordering: String, page: Int, pageSize: Int): GameList
 
     platforms(ordering: String, page: Int, page_size: Int): [Platform]
 

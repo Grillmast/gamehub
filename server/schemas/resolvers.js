@@ -6,7 +6,7 @@ const resolvers = {
       let filters = {};
       
       if (genre) {
-        filters.genres = genre;
+        filters.genre = genre;
       }
       
       if (platform) {
@@ -23,6 +23,12 @@ const resolvers = {
     gameDetails: async (_, { gameId }) => {
       const gameDetails = await GameDetails.findById(game_pk);
       return gameDetails;
+    },
+    gamesByParams: async (_, { ordering, page, pageSize }) => {
+      // Implement your gamesByParams resolver logic here
+      // Example: Fetch games based on parameters and return them
+      const gamesByParams = await Game.find({}).sort(ordering).skip((page - 1) * pageSize).limit(pageSize);
+      return gamesByParams;
     },
   },
   Mutation: {
